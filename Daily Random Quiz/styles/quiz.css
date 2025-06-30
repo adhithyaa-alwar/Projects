@@ -1,0 +1,292 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: purple;
+    color: #333;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+#differentScreens > div {
+    min-height: 60vh;
+    max-height: fit-content;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: purple;
+    color: white;
+    border-radius: 12px;
+}
+
+#rulesScreen ol{
+    background-color: rgb(158, 48, 158);
+    color: rgb(219, 219, 219);
+    margin: 5%;
+    padding: 5%;
+    padding-left: 10%;
+}
+
+
+#topicScreenDescriptionArea{
+    background-color: rgb(158, 48, 158);
+    color: rgb(219, 219, 219);
+    margin: 5%;
+    padding: 5%;
+    text-align: center;
+}
+
+#topicScreenDescriptionArea h1{
+    margin-bottom: 5%;
+}
+
+#rulesScreen li{
+    margin: 1%;
+}
+#rulesScreenParagrahs ol {
+    padding-left: 30px;
+    margin-top: 0;
+}
+
+#rulesScreenParagrahs li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+#questionScreenRemaining{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #5c6bc0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #3f51b5;
+}
+
+#submitAnswerButton, #nextQuestion, #topicIntroScreenButton{
+    background-color: #64c05c;    
+}
+
+#submitAnswerButton:hover, #nextQuestion:hover, #topicIntroScreenButton:hover {
+    background-color: #43b53f;
+}
+
+#goToEnd, #quitQuizButton{
+    background-color: #c05c5c;    
+}
+
+#goToEnd:hover, #quitQuizButton:hover {
+    background-color: #b53f3f;
+}
+
+#topicScreenDescriptionArea p {
+    font-size: 1rem;
+    margin: 8px 0;
+}
+
+.questionScreenScoreSection, #resultsScreenScoreSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.questionScreenScoreSection > div{
+    background-color: rgb(88, 0, 55);
+    border-radius: 10px;
+    padding: 10px 10px;
+    margin: 10px;
+    min-width: 120px;
+    text-align: center;
+}
+
+@media (max-width: 750px) {
+    .questionScreenScoreSection > div{
+        min-width: 50%;
+        float: none;
+        display: block;        
+    }
+}
+
+@media (max-width: 775px) {
+    #resultsScreenScoreSection{
+        min-width: 50%;
+        float: none;
+        display: block;        
+    }
+}
+
+
+#resultsScreenScoreSection > div {
+    background-color: rgb(88, 0, 55);
+    border-radius: 10px;
+    padding: 10px 10px;
+    margin: 10px;
+    min-width: 120px;
+    text-align: center;
+}
+
+#resultsScreenScoreSection #tryAgain{
+    background-color: none;
+}
+
+#questionScreenControlSection{
+    text-align: center;
+}
+
+#questionScreenControlSection button{
+    display: inline-block;
+    margin-left: 1%; 
+    margin-right: 1%;
+}
+
+#submitAnswerScreen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#footerSection {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #ddd;
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+
+.mcq-option {
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    width: 80%;
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+
+.mcq-option:hover {
+    background-color: #d1c4e9;
+}
+
+
+input[type="radio"]:checked + label {
+    background-color: #5c6bc0;
+    color: white;
+    border: 2px solid #3f51b5;
+}
+
+.mcq-option {
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.mcq-option:hover {
+    transform: scale(1.05);
+}
+
+/* Ones I added below */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+input[type="radio"]:checked + label {
+    animation: pulse 0.3s ease;
+}
+
+#differentScreens div{
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+#questionScreenFRQAnswerType, #questionScreenMCQAnswerType{
+    text-align: center;
+}
+
+input[type=text] {
+    width: 80%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    color: purple;
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  margin: 1px;
+  background-color: #bbb;
+  color: black;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+#resultsScreenScoreSection #resultsScreenFinalScoreDisplay{
+    min-width: 80%;
+    font-size: 1.5rem;
+}
+
+#resultsScreenScoreSection #resultsScreenCorrectScoreDisplay{
+    background-color: #254D26;
+}
+#resultsScreenScoreSection #resultsScreenIncorrectScoreDisplay{
+    background-color: #550000;
+}
+
+#resultsScreenScoreSection #resultsScreenSkippedScoreDisplay{
+    background-color: #5B5B57;
+}
+
+#footerSection{
+	position: sticky;
+    top: 100vh;
+	width: 100%;
+	padding-bottom: 50px;
+	float:left;
+	font-size: 20px;
+	color: white;
+	background-color: #300242;
+	text-align: center;
+	justify-content: center;
+}
+
+#footerSection img{
+	width: min(50px, 15%);
+	height: min(50px, 15%);
+	justify-content: space-between;
+}

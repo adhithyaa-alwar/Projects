@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MysteryQuizzz</title>
+    <link rel="icon" href="images/questionFavicon.png">
+    <link rel="stylesheet" href="styles/quiz.css">
+    <script defer src="js/quizBook.js"></script> <!-- This is the file that contains all the JSONs fo-->
+	<script defer src="js/quizParser.js"></script>
+	<script defer src="js/quizRulesScreen.js"></script>
+</head>
+<body>
+    <div id = "differentScreens">
+        <div id = "rulesScreen">
+            <div class = "rulesh1">
+                <h1>Welcome to MysteryQuizzz!</h1>
+            </div>
+            <div class = "rulesh2">
+                <h2>Here are the rules: </h2>
+            </div>
+            <div id = "rulesScreenParagrahs">
+                <ol type="1">
+                    <li>There will be a different quiz topic daily</li>
+                    <li>You will get different amount of points based on the difficulty level</li>
+                    <li>You will get 60 seconds to answer each question</li>
+                    <li>If you don't hit the submit button by the time the timer hits 0 seconds, whatever answer you have inputted will be taken as your answer</li>
+                    <li>If you do not want to answer a question or do not know it, you can skip it but beware: you will not have the ability to re-answer them unless you restart the quiz!</li>
+                    <li>You can also skip straight to the end of the quiz at any point by hitting the quit button</li>
+                </ol>            
+            </div>
+            <button id = "rulesScreenButton">Click Here to View Today's Topic</button>
+        </div>
+        <div id = "topicIntroScreen">
+            <h1 id = "dateToday">Date: </h1>
+            <div id = "topicScreenDescriptionArea">
+                <h1 id = "topicScreenTopicName">Quiz Topic Today: </h1>
+                <p id = "topicScreenDescription">Description: </p>
+                <p id = "topicScreenNumberOfQuestions">Total Number of Questions: </p>
+                <p id = "topicScreenPointsPossible">Total Number of Points Possible: </p>
+                <button id = "backToRules">Click Here to Go Back to the Rules</button>
+                <button id = topicIntroScreenButton>Click Here to Begin</button>            
+            </div>
+        </div>
+        <div id = "questionScreen">
+            <div id = "questionScreenHeader">
+                <h1 id = "questionScreenTopicName">Topic: </h1>
+            </div>
+            <div class = "questionScreenScoreSection">
+                <div id = "questionScreenScore">
+                    <p id = "yourScore"> Your Score: </p>
+                </div>
+                <div id = "questionScreenRemaining">
+                    <span class="dot" id = "dot10">?</span>
+                    <span class="dot" id = "dot9">?</span>
+                    <span class="dot" id = "dot8">?</span>
+                    <span class="dot" id = "dot7">?</span>
+                    <span class="dot" id = "dot6">?</span>
+                    <span class="dot" id = "dot5">?</span>
+                    <span class="dot" id = "dot4">?</span>
+                    <span class="dot" id = "dot3">?</span>
+                    <span class="dot" id = "dot2">?</span>
+                    <span class="dot" id = "dot1">?</span>
+                </div>
+                <div id = "questionScreenTimeLeft">
+                    <p id = "yourTimeLeft"> Seconds</p>
+                </div>           
+            </div>
+            <div id = "questionScreenQuestionSection">
+                <h2 id = question>Question: </h2>
+                <div id = questionScreenFRQAnswerType>
+        		    <input type="text" id="frqAnswer" name="frqAnswer">                    
+                </div>
+                <div id = questionScreenMCQAnswerType>
+                    <input type="radio" id="optionA" name="mcq">
+                    <label for="optionA" class="mcq-option">A. </label>
+                    <br>
+                    <input type="radio" id="optionB" name="mcq">
+                    <label for="optionB" class="mcq-option">B. </label>
+                    <br>
+                    <input type="radio" id="optionC" name="mcq">
+                    <label for="optionC" class="mcq-option">C. </label>
+                    <br>
+                    <input type="radio" id="optionD" name="mcq">
+                    <label for="optionD" class="mcq-option">D. </label>                 
+                </div>
+            </div>
+            <div id = "timeUpNotification">
+                <h1>Time's Up!</h1>
+                <h2>Your Answer Has Been Automatically Submitted!</h2>
+            </div>
+            <div id = "questionScreenControlSection">
+                <button id = "submitAnswerButton">Submit Answer</button>
+                <button id = "skipQuestionButton">Skip Question</button>
+                <button id = "quitQuizButton">Quit</button>
+            </div>
+        </div>
+        <div id = "submitAnswerScreen">
+            <h1 id = "resultingAnswer"></h1> <!-- Whether its correct, wrong, or skipped -->
+            <h2 id = plusPoints></h2> <!-- How much points if right, the right answer if wrong -->
+            <button id = "nextQuestion">Next Question</button>
+            <button id = "goToEnd">Quit</button>
+        </div>
+        <div id = "resultsScreen">
+            <div id = "resultsScreenHeader">
+                <h1 class = "questionTopic"></h1>
+                <h1 id = "resultsScreenQuizHeader">Quiz Results</h1>
+            </div>
+            <div id = "resultsScreenScoreSection">
+                <div id = "resultsScreenFinalScoreDisplay">
+                    <h2 id = "resultsScreenFinalScore">Your Final Score: </h2>
+                </div>
+                <div id = "resultsScreenCorrectScoreDisplay">
+                    <p id = "yourCorrectFinal"> Correct</p>
+                </div>
+                <div id = "resultsScreenIncorrectScoreDisplay">
+                    <p id = "yourIncorrectFinal"> Incorrect</p>
+                </div>
+                <div id = "resultsScreenSkippedScoreDisplay">
+                    <p id = "yourFinalSkipped"> Skipped</p>
+                </div>
+            </div>
+            <div id = "tryAgain">
+                <button id = "restartQuizButton">Click Here to Try Again</button>
+            </div>
+        </div>
+    </div>
+    <div id = "footerSection">
+        <p>Copyright: Adhithyaa Arul Murugan Alwar, 2025</p>
+        <p>Email Contact: adhithyaa@scu.edu</p>
+        <a href="https://www.instagram.com/adhithyaa1234" target="_blank"><img src="images/insta.png" alt="instagram logo"></a>
+        <a href="https://www.linkedin.com/in/adhithyaa-alwar/" target="_blank"><img src="images/linkedin.png" alt="linkedin logo"></a>
+    </div>
+</body>
+</html>
